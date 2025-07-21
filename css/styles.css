@@ -1,0 +1,49 @@
+.button-link {
+    font-family: Arial;
+    font-size: 1.5vw;
+    font-weight: 520;
+    text-decoration: none;
+    color: black;
+    padding: 0 3%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #232629;
+    color: white;
+}
+.button-linkN{
+    font-family: Arial;
+    font-size: 1.7vw;
+    margin: 1.5vw;
+    font-weight: 620;
+    text-decoration: none;
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.nav-display{
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(94, 86, 86);
+    border-bottom-style: solid;
+}
+
+#button-theme{
+    font-family: Arial;
+    font-size: 1.5vw;
+    margin: 1.5vw;
+    font-weight: 520;
+    text-decoration: none;
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
