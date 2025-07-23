@@ -162,6 +162,7 @@ html {
 .introLight{
     display: flex;
     height: 100%;
+    align-items: flex-start;
     margin:0;
 }
 .introDark{
@@ -206,13 +207,7 @@ html {
     font-family: Arial;color: rgb(95, 89, 89);margin-top: 1vw;
     font-size: calc(7px + 0.5vw);
 }
-.right-intro {
-    width: 45vw; 
-    margin-left: 2vw; 
-    padding: 0 5vw; 
-    overflow-y: auto;
-    min-height: 90vh
-}
+
 .Light-IntroH {
     font-family: arial;
     font-size:1.5vw;
@@ -241,19 +236,75 @@ html {
     color: white;
 }
 
+.right-introLight {
+    width: 45vw; 
+    margin-left: 2vw; 
+    padding: 0 5vw; 
+    overflow-y: auto;
+    min-height: 100vh
+}
+.right-introDark {
+    width: 45vw; 
+    margin-left: 2vw; 
+    padding: 0 5vw; 
+    overflow-y: auto;
+    min-height: 100vh
+}
+.right-introDark p {
+    font-family: Arial;
+    font-size:1.5vw;
+    font-weight: 300;
+    color: rgb(170, 167, 167);
+    margin-left: 1vw;
+}
+.right-introLight p {
+    font-family: Arial;
+    font-size:1.5vw;
+    font-weight: 300;
+    color: black;
+    margin-left: 1vw;
+}
+.right-introLight li {
+    font-family: Arial;
+    font-size:1.5vw;
+    font-weight: 300;
+    color: black;
+}
+.right-introDark li {
+    font-family: Arial;
+    font-size:1.5vw;
+    font-weight: 300;
+    color: rgb(170, 167, 167);
+}
+.right-introLight a {
+    text-decoration-line: none;
+    color: rgb(118, 135, 231);
+}
+.right-introLight a:hover{
+    text-decoration: underline;
+}
+
+.right-intro {
+    width: 45vw; 
+    margin-left: 2vw; 
+    padding: 0 5vw; 
+    overflow-y: auto;
+    min-height: 90vh
+}
+
 
 .right-intro p {
     font-family: Arial;
     font-size:1.5vw;
     font-weight: 300;
-    color: rgb(95, 89, 89);
+    color: black;
     margin-left: 1vw;
 }
 .right-intro li {
     font-family: Arial;
     font-size:1.5vw;
     font-weight: 300;
-    color: rgb(95, 89, 89);
+    color: black;
 }
 .right-intro a {
     text-decoration-line: none;
@@ -262,6 +313,8 @@ html {
 .right-intro a:hover{
     text-decoration: underline;
 }
+
+
 .avatar{
     width: 50%;
     border-radius: 100%;
@@ -321,8 +374,12 @@ html {
 .proinfo p{
     font-size: calc(2px + 1.5vw)
 }
-.link {
+.linkLight {
     font-family: Arial;
+}
+.linkDark {
+    font-family: Arial;
+    color: white
 }
 
 .video-container {
@@ -390,55 +447,39 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.cv-block {
+.cv-blockLight {
     margin-bottom: 2rem;
     padding: 1rem;
     background: #f9f9f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-left: 4px solid #5a5a5a;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-.cv-block h3 {
-    font-size: 1.4rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.3rem;
+.cv-blockDark {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #686161;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid #5a5a5a;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-.cv-block ul {
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
+.cv-blockLight:hover {
+    transform: translateY(+8px); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.cv-blockDark:hover {
+    transform: translateY(+8px); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.cv-block ul li {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-.cv-block p {
-    margin: 0.5rem 0;
-    line-height: 1.6;
-}
-
-.cv-block a {
+.cv-blockLight a {
     color: #0077cc;
     text-decoration: none;
     transition: color 0.2s ease;
-}
-
-.cv-block a:hover {
-    color: #005fa3;
-    text-decoration: underline;
-}
-
-.cv-block strong {
-    color: #222;
-}
-
-.cv-block ul li strong {
-    font-weight: 600;
 }
 
 /*contact*/
@@ -467,9 +508,9 @@ html {
     justify-items: stretch; 
 }
 
-.contact-card {
-    background: #f9f9f9;
-    padding: 1rem;
+.contact-cardLight {
+    background: #e9e3e3;
+    padding: 0.5rem;
     border-radius: 8px; 
     text-align: left; 
     box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
@@ -477,10 +518,24 @@ html {
     width: 100%;
     border-left: 4px solid #5a5a5a; 
 }
+.contact-cardDark {
+    background: #cfcdcd;
+    padding: 0.5rem;
+    border-radius: 8px; 
+    text-align: left; 
+    box-shadow: 0 3px 4px rgba(201, 198, 198, 0.1); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    border-left: 4px solid #5a5a5a; 
+}
 
-.contact-card:hover {
-    transform: translateY(-2px); 
+.contact-cardLight:hover {
+    transform: translateY(+8px); 
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.contact-cardDark:hover {
+    transform: translateY(+8px); 
+    box-shadow: 0 2px 8px rgba(248, 247, 247, 0.15);
 }
 
 .contact-card i {

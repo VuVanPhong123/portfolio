@@ -6,27 +6,28 @@
         </title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+        
     </head>
     <body style="margin:0">
-        <nav class="nav-display">
-            <a href="index.html" class="button-link">
+        <nav class="nav-displayLight">
+            <a href="index.html" class="button-linkLight">
                 Phong Vũ / Portfolio
             </a>     
-            <a href="project.html" class="button-link">
+            <a href="project.html" class="button-linkLight">
                 Projects
             </a>   
-            <a href="skills.html" class="button-link">
+            <a href="skills.html" class="button-linkLight">
                 Skills
             </a>   
             <a href="cv.html" class="active-link">
                 CV
             </a>
-            <a href="contact.html" class="button-link">
+            <a href="contact.html" class="button-linkLight">
                 Contact
             </a>
+            <button id="theme-toggle" class ="toggle-buttonLight" ><i class="fa-solid fa-toggle-off"></i></button>
         </nav>
-        <section class="intro">
+        <section class="introLight">
             <aside class="left-intro">
                 <div class = "left-introtop">
                     <img src="assets/avatar.jpg" alt="avatar" class ="avatar">      
@@ -65,18 +66,18 @@
                     </div>
                 </div>  
             </aside>
-                <main class="right-intro">
+                <main class="right-introLight">
                     <section class="cv-section">
                         <h2>Curriculum Vitae <i class="fa-solid fa-address-card"></i></h2>
 
-                        <div class="cv-block">
-                            <h3>Education <i class="fa-solid fa-school"></i></h3>
+                        <div class="cv-blockLight">
+                            <h3 class = "Light-IntroH3">Education <i class="fa-solid fa-school"></i></h3>
                             <p><strong>University of Engineering and Technology (VNU-UET)</strong><br>
                             Third year Computer Science student, 2025 - Present</p>
                         </div>
 
-                        <div class="cv-block">
-                            <h3>Technical Skills <i class="fa-solid fa-wrench"></i></h3>
+                        <div class="cv-blockLight">
+                            <h3 class = "Light-IntroH3">Technical Skills <i class="fa-solid fa-wrench"></i></h3>
                             <ul>
                                 <li>Languages: Python, C++, JavaScript, HTML, CSS</li>
                                 <li>Frameworks: Kivy, SDL, Flask</li>
@@ -86,8 +87,8 @@
                             </ul>
                         </div>
 
-                        <div class="cv-block">
-                            <h3>Projects <i class="fa-solid fa-laptop"></i></h3>
+                        <div class="cv-blockLight">
+                            <h3 class = "Light-IntroH3">Projects <i class="fa-solid fa-laptop"></i></h3>
                             <ul>
                                 <li><strong>No Mercy</strong> - 2D SDL C++ Game (gameplay design, collision detection, state management)</li>
                                 <li><strong>Foody</strong> - Street Vendor Order App using Kivy (order management, customer rating system)</li>
@@ -95,13 +96,13 @@
                             </ul>
                         </div>
 
-                        <div class="cv-block">
-                            <h3>Experience <i class="fa-solid fa-hourglass-start"></i></h3>
+                        <div class="cv-blockLight">
+                            <h3 class = "Light-IntroH3">Experience <i class="fa-solid fa-hourglass-start"></i></h3>
                             <p>Currently focusing on developing practical projects for portfolio, learning advanced Python and frontend frameworks, and contributing to GitHub repositories.</p>
                         </div>
 
-                        <div class="cv-block">
-                            <h3>Languages <i class="fa-solid fa-language"></i></h3>
+                        <div class="cv-blockLight">
+                            <h3 class = "Light-IntroH3">Languages <i class="fa-solid fa-language"></i></h3>
                             <ul>
                                 <li>Vietnamese (Native)</li>
                                 <li>English (Intermediate)</li>
@@ -111,5 +112,6 @@
                 </main>
 
         </section>
+        <script src="scripts.js"></script>
     </body>
 </html> 

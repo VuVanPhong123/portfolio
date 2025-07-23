@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const theme_toggle = document.getElementById("theme-toggle");
     
-    // Initialize with saved theme or default to "Light"
     let currentTheme = localStorage.getItem("theme") || "Light";
     updateTheme(currentTheme);
 
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateTheme(theme) {
-        // Update all elements with Light/Dark classes
         const elements = document.querySelectorAll('[class]');
         elements.forEach(element => {
             const classes = [...element.classList];
