@@ -35,19 +35,19 @@ A personal portfolio website showcasing my projects, skills, CV, and contact inf
 ```
 portfolio/
 │
-├── assets/               # Static media files
-│   ├── avatar.jpg        # Profile picture
-│   └── screenshot.png    # Portfolio preview
+├── assets/               # Static media files   📁
+│   ├── avatar.jpg        # Profile picture      🖼️
+│   └── screenshot.png    # Portfolio preview    🖼️
 │
-├── css/
-│   └── styles.css        # Main stylesheet
+├── css/                                         📁
+│   └── styles.css        # Main stylesheet      🎨
 │
-├── scripts/
-│   └── scripts.js        # Theme toggle logic
+├── scripts/                                     📁
+│   └── scripts.js        # Theme toggle logic   🛠️
 │
-├── index.html            # Homepage
-├── project.html          # Projects
-├── skills.html           # Skills  
-├── cv.html               # CV/Resume
-└── contact.html          # Contact
+├── index.html            # Homepage             📄
+├── project.html          # Projects             📄
+├── skills.html           # Skills               📄
+├── cv.html               # CV/Resume            📄
+└── contact.html          # Contact              📄
 ```
