@@ -31,21 +31,23 @@ A personal portfolio website showcasing my projects, skills, CV, and contact inf
   ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
 
 ## Project Structure
- portfolio/
-│
-├── 📁 assets/ # Static media files
-│ ├── 🖼️ avatar.jpg # Profile picture
-│ └── 🖼️ screenshot.png # Portfolio preview (optional)
-│
-├── 📁 css/
-│ └── 🎨 styles.css # Main stylesheet (light/dark themes)
-│
-├── 📁 scripts/
-│ └── 🛠️ scripts.js # Theme toggle & interactive elements
-│
-├── 📄 index.html # Homepage (About/Introduction)
-├── 📄 project.html # Projects gallery
-├── 📄 skills.html # Technical skills showcase
-├── 📄 cv.html # Interactive Curriculum Vitae
-└── 📄 contact.html # Contact information cards
 
+```
+portfolio/
+│
+├── assets/               # Static media files
+│   ├── avatar.jpg        # Profile picture
+│   └── screenshot.png    # Portfolio preview
+│
+├── css/
+│   └── styles.css        # Main stylesheet
+│
+├── scripts/
+│   └── scripts.js        # Theme toggle logic
+│
+├── index.html            # Homepage
+├── project.html          # Projects
+├── skills.html           # Skills  
+├── cv.html               # CV/Resume
+└── contact.html          # Contact
+```
