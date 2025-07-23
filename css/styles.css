@@ -222,6 +222,25 @@ html {
     font-size:1.5vw;
     color: white;
 }
+.Light-IntroH3 {
+    font-family: arial;
+    font-size:1.5vw;
+}
+.Dark-IntroH3 {
+    font-family: arial;
+    font-size:1.5vw;
+    color: white;
+}
+.Light-IntroH4 {
+    font-family: arial;
+    font-size:1vw;
+}
+.Dark-IntroH4 {
+    font-family: arial;
+    font-size:1vw;
+    color: white;
+}
+
 
 .right-intro p {
     font-family: Arial;
