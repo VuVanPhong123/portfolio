@@ -5,16 +5,15 @@
             Phong Vũ/portfolio
         </title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     </head>
-    <body>
+    <body style="margin:0">
         <nav class="nav-display">
-            <a href="index.html" class="button-linkN">
+            <a href="index.html" class="button-link">
                 Phong Vũ / Portfolio
             </a>    
-            <a href="education.html" class="button-link">
-                Education
-            </a>   
-            <a href="project.html" class="button-link">
+            <a href="project.html" class="active-link">
                 Projects
             </a>   
             <a href="skills.html" class="button-link">
@@ -27,5 +26,299 @@
                 Contact
             </a>
         </nav>
+        <section class="intro">
+            <aside class="left-intro">
+                <div class = "left-introtop">
+                    <img src="assets/avatar.jpg" alt="avatar" class ="avatar">      
+                    <h1 style = "font-family: Arial;color: rgb(95, 89, 89);margin-bottom: 0;">
+                        Phong Vu
+                    </h1>
+                </div>
+                <div class = "left-introbot">
+                    <h5>
+                        Hi, I’m Phong Vũ, a Computer Science student passionate about building clean, interactive websites.
+                    </h5>
+                    <div class="info-line">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Viet Nam</p>
+                    </div>
+                    <div class="info-line">
+                        <i class="fa-solid fa-school"></i>
+                        <p>
+                            <a href="https://uet.vnu.edu.vn/" >University of engineer and technology</a>
+                        </p>
+                    </div>
+                    <div class="info-line">
+                        <i class="fa-brands fa-github"></i>
+                        <p>
+                            <a href="https://github.com/VuVanPhong123" >Github</a>
+                        </p>
+                    </div>
+                    <div class="info-line">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>phongbeo124@gmail.com</p>
+                    </div>
+                    
+                    <div class="info-line">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+84 856 372 056</p>
+                    </div>
+                </div>  
+            </aside>
+                <main class="right-intro">
+                    <h2 id="No-mercy" class="link">Project 1: No mercy!!!<i class="fa-solid fa-gamepad"></i></h2>
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/18VCFn4y4qJjHt_Y6Hp2XngmAOO0-i9kc/preview" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>A fast-paced 2D arcade game developed using SDL (Simple DirectMedia Layer) library in C++. Inspired by "NO HUMANITY", this game challenges players to control a UFO and dodge incoming obstacles across 6 increasingly difficult levels.</p>
+                        
+                        <div class="game-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li><strong>6 Unique Levels:</strong> Each with different obstacle patterns and mechanics</li>
+                                <li><strong>Precise Controls:</strong> Arrow key navigation with collision detection</li>
+                                <li><strong>Dynamic Obstacles:</strong> Meteors, clouds, flying fans, tornadoes, and animal enemies</li>
+                                <li><strong>State Management:</strong> Single variable (int a) controls all game states</li>
+                                <li><strong>Retry System:</strong> Option to restart levels after failure</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="technical-details">
+                            <h3>Technical Implementation:</h3>
+                            <div class="code-snippet">
+                                <h4>Core Game Loop Structure:</h4>
+                                <pre><code>
+                                int a = 0; // Main state variable
+
+                                while (gameRunning) {
+                                    if (a == 0) { /* Waiting screen */ }
+                                    else if (a == 1) { /* Level 1 */ }
+                                    // ... up to a == 18 for all states
+                                }</code></pre>
+                            </div>
+                            
+                            <div class="code-snippet">
+                                <h4>Collision Detection:</h4>
+                                <pre><code>
+                                bool Detecting_Collision(SDL_Rect& object, SDL_Rect& UFO) {
+                                    if (object.y+object.h < UFO.y || 
+                                        object.y > UFO.y+UFO.h || 
+                                        object.x > UFO.x+UFO.w || 
+                                        object.x+object.w < UFO.x)
+                                        return false;
+                                    return true;
+                                }
+                            </code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="level-breakdown">
+                            <h3>Level Breakdown:</h3>
+                            
+                            <div class="level">
+                                <h4>Level 1 - Meteor Shower</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> 9 randomly spawning meteors</li>
+                                    <li><strong>Behavior:</strong> Appear from screen edges and move toward UFO</li>
+                                    <li><strong>Challenge:</strong> Basic pattern recognition and quick reflexes</li>
+                                    <li><strong>Code:</strong> Uses MeteoroidRect array and SpawningMeteoroid() function</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level">
+                                <h4>Level 2 - Cloud Fall</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> 10 falling clouds with 1 random gap</li>
+                                    <li><strong>Behavior:</strong> Spawn at top, fall vertically with random disappearance</li>
+                                    <li><strong>Challenge:</strong> Identify safe path through cloud formation</li>
+                                    <li><strong>Code:</strong> Uses CloudRect array and RandomMissingCloud variable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level">
+                                <h4>Level 3 - Flying Fans</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> 4 animated flying objects</li>
+                                    <li><strong>Behavior:</strong> Horizontal movement with 4-frame animation</li>
+                                    <li><strong>Special:</strong> Spawn homing missiles when aligned with UFO</li>
+                                    <li><strong>Explosion:</strong> Creates 6 fragments upon collision detection</li>
+                                    <li><strong>Code:</strong> Uses movingFlyingFan() and movingFragment() functions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level">
+                                <h4>Level 4 - Tornado Alley</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> 5 expanding tornadoes</li>
+                                    <li><strong>Behavior:</strong> Spawn at corners, expand to maximum size</li>
+                                    <li><strong>Challenge:</strong> Navigate through dynamic obstacle sizes</li>
+                                    <li><strong>Code:</strong> Reuses meteoroid mechanics with different visuals</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level">
+                                <h4>Level 5 - Animal Attack</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> Cats and dogs combination</li>
+                                    <li><strong>Behavior:</strong> 
+                                        <ul>
+                                            <li>Dogs: Meteor-like movement patterns</li>
+                                            <li>Cats: Cloud-like falling behavior</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Challenge:</strong> Dual-pattern recognition and avoidance</li>
+                                    <li><strong>Code:</strong> Uses spawningDogCat() and movingCat() functions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level">
+                                <h4>Final Level - Ultimate Challenge</h4>
+                                <ul>
+                                    <li><strong>Obstacles:</strong> All previous enemies combined</li>
+                                    <li><strong>Behavior:</strong> Meteor showers + cloud gaps + homing missiles</li>
+                                    <li><strong>Challenge:</strong> Comprehensive skill test with no mercy</li>
+                                    <li><strong>Special:</strong> 2x speed multiplier for intense gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="development-notes">
+                            <h3>Development Notes:</h3>
+                            <div class="note">
+                                <h4>Technical Challenges</h4>
+                                <ul>
+                                    <li>Single variable state management (int a) for all game screens</li>
+                                    <li>Optimized collision detection with rectangular hitboxes</li>
+                                    <li>Memory management for multiple spawned objects</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="note">
+                                <h4>Design Choices</h4>
+                                <ul>
+                                    <li>Progressive difficulty curve across levels</li>
+                                    <li>Reusing mechanics with visual variations</li>
+                                    <li>Minimalist UI to maintain focus on gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/VuVanPhong123/NO-MERCY" class="github-link">
+                                <i class="fa-brands fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <h2 id="foody" class="link">Project 2: Foody - Street Vendor Order App <i class="fa-solid fa-burger"></i></h2>
+                    <div class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>Foody is a lightweight mobile-friendly web app built with Kivy, designed for street vendors to manage orders and for customers to place orders remotely. This project helps small food vendors streamline order tracking, inventory management, and customer interaction easily.</p>
+
+                        <div class="game-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li><strong>Dual App Design:</strong> Owner app for order and inventory management, customer app for browsing and ordering.</li>
+                                <li><strong>Order Tracking:</strong> View orders, customer addresses, and daily income easily.</li>
+                                <li><strong>Ingredient Management:</strong> Track ingredients, expiration, and costs for effective management.</li>
+                                <li><strong>Rating System:</strong> Customers can rate food items post-order.</li>
+                            </ul>
+                        </div>
+
+                        <div class="technical-details">
+                            <h3>Technical Implementation:</h3>
+                            <div class="code-snippet">
+                                <h4>Sample Order Tracking Logic:</h4>
+                                <pre><code>orders = []
+                    def add_order(customer, items):
+                        order = {"customer": customer, "items": items}
+                        orders.append(order)</code></pre>
+                            </div>
+
+                            <div class="code-snippet">
+                                <h4>Ingredient Tracking Example:</h4>
+                                <pre><code>ingredients = {"bread": 20, "pork": 15}
+                    def update_stock(item, qty):
+                        if item in ingredients:
+                            ingredients[item] -= qty</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="development-notes">
+                            <h3>Development Notes:</h3>
+                            <ul>
+                                <li>Used <strong>Kivy</strong> for cross-platform GUI development.</li>
+                                <li>Focus on low-memory usage to run on low-cost devices.</li>
+                                <li>Simple and clean UI/UX for street vendor needs.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/VuVanPhong123/foody" class="github-link">
+                                <i class="fa-brands fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <h2 id="bank-prediction" class="link">Project 3: Bank Customer Churn Prediction <i class="fa-solid fa-robot"></i></h2>
+                    <div class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>
+                            This project implements a Logistic Regression classifier from scratch to predict bank customer churn. Using advanced techniques like momentum-based gradient descent, regularization, and early stopping, the model identifies customers likely to leave, helping banks improve customer retention.
+                        </p>
+
+                        <div class="game-features">
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li><strong>From-Scratch Implementation:</strong> Built Logistic Regression with numpy, manual weight updates, and sigmoid activation.</li>
+                                <li><strong>Momentum and Early Stopping:</strong> Includes momentum to accelerate convergence and patience-based early stopping for efficiency.</li>
+                                <li><strong>Regularization:</strong> Uses L2 regularization to prevent overfitting.</li>
+                                <li><strong>EDA:</strong> Used Seaborn and Matplotlib to analyze customer patterns.</li>
+                            </ul>
+                        </div>
+
+                        <div class="technical-details">
+                            <h3>Technical Implementation:</h3>
+                            <div class="code-snippet">
+                                <h4>Logistic Regression Core Logic:</h4>
+                                <pre><code>
+                        def sigmoid(z):
+                            return 1 / (1 + np.exp(-z))
+
+                        def compute_loss(y, y_pred, weights, reg_lambda):
+                            m = len(y)
+                            loss = (-1/m) * np.sum(y*np.log(y_pred) + (1-y)*np.log(1 - y_pred))
+                            reg = (reg_lambda / (2*m)) * np.sum(weights**2)
+                            return loss + reg
+                    </code></pre>
+                            </div>
+
+                            <div class="code-snippet">
+                                <h4>Momentum Update Example:</h4>
+                                <pre><code>
+                        velocity_w = momentum * velocity_w - learning_rate * dw
+                        weights += velocity_w</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="development-notes">
+                            <h3>Development Notes:</h3>
+                            <ul>
+                                <li>Trained the model on a Kaggle bank churn dataset with engineered features.</li>
+                                <li>Tested and monitored loss to avoid overfitting.</li>
+                                <li>Visualized churn correlations using heatmaps and pairplots.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/VuVanPhong123/Bank-prediction" class="github-link">
+                                <i class="fa-brands fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                </main>
+        </section>
     </body>
 </html> 
