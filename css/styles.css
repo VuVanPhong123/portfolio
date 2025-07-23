@@ -1,7 +1,8 @@
+
 html {
     overflow-y: scroll; 
 }
-.button-link {
+.button-linkLight {
     font-family: Arial;
     font-size: 1.5vw;
     font-weight: 520;
@@ -18,9 +19,31 @@ html {
     margin: 0; 
 }
 
-.button-link:hover {
-    background-color: #232629;
+.button-linkLight:hover {
+    background-color: black;
     color: white;
+}
+
+.button-linkDark {
+    font-family: Arial;
+    font-size: 1.5vw;
+    font-weight: 520;
+    text-decoration: none;
+    color: white;
+    padding: 0 5%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: dark; 
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0; 
+}
+
+.button-linkDark:hover {
+    background-color: rgb(214, 209, 228);
+    color: black;
 }
 
 
@@ -42,12 +65,12 @@ html {
 }
 
 .active-link:hover {
-    background-color: #232629;
+    background-color: black;
     color: white;
 }
 
 
-.toggle-button{
+.toggle-buttonLight{
     font-family: Arial;
     font-size: 2vw;
     font-weight: 520;
@@ -62,13 +85,33 @@ html {
     align-items: center;
     transition: background-color 0.3s, color 0.3s;
 }
-.toggle-button:hover {
+.toggle-buttonLight:hover {
     background-color: #232629;
     color: white;
 }
 
+.toggle-buttonDark{
+    font-family: Arial;
+    font-size: 2vw;
+    font-weight: 520;
+    text-decoration: none;
+    color: white;
+    padding: 0 5%;
+    height: 100%;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+.toggle-buttonDark:hover {
+    background-color: rgb(214, 209, 228);
+    color: black;
+}
 
-.nav-display {
+
+.nav-displayLight {
     height: 8vh;
     display: flex;
     align-items: center;
@@ -78,10 +121,25 @@ html {
     position: sticky; 
     top: 0;
     margin-top: 0;
-    margin-bottom: 1vh;
+    margin-bottom: 0;
     padding-top: 0;
     z-index: 5;
     background-color: white; 
+}
+.nav-displayDark {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(39, 38, 38);
+    border-bottom-style: solid;
+    position: sticky; 
+    top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    z-index: 5;
+    background-color: black; 
 }
 
 #button-theme{
@@ -101,17 +159,24 @@ html {
     height: 20%;
     width: 20%;
 }
-.intro{
+.introLight{
     display: flex;
     height: 100%;
     margin:0;
+}
+.introDark{
+    display: flex;
+    height: 100%;
+    margin:0;
+    background-color: black;
+    border:none;
 }
 .left-intro{
     width: 25vw;
     border-right: #b1b4b6;
     border-right-style: double;
     position: sticky; top: 10vh;
-    height: calc(90%);
+    height: 90vh;
     margin:0
 }
 .left-introtop{
@@ -148,11 +213,16 @@ html {
     overflow-y: auto;
     min-height: 90vh
 }
-.right-intro h1 {
+.Light-IntroH {
     font-family: arial;
     font-size:1.5vw;
-
 }
+.Dark-IntroH {
+    font-family: arial;
+    font-size:1.5vw;
+    color: white;
+}
+
 .right-intro p {
     font-family: Arial;
     font-size:1.5vw;
