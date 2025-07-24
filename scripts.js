@@ -1,32 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const theme_toggle = document.getElementById("theme-toggle");
+    const themeButton = document.getElementById("theme-toggle");
     
-    let currentTheme = localStorage.getItem("theme") || "Light";
-    updateTheme(currentTheme);
+    // Get saved theme or default to Light
+    let currentTheme = localStorage.getItem("theme");
+    if (!currentTheme) {
+        currentTheme = "Light";
+    }
+    
+    // Apply the current theme
+    applyTheme(currentTheme);
 
-    theme_toggle.addEventListener("click", () => {
-        currentTheme = currentTheme === "Light" ? "Dark" : "Light";
-        updateTheme(currentTheme);
+    // Toggle theme when button is clicked
+    themeButton.addEventListener("click", function() {
+        if (currentTheme === "Light") {
+            currentTheme = "Dark";
+        } else {
+            currentTheme = "Light";
+        }
+        applyTheme(currentTheme);
         localStorage.setItem("theme", currentTheme);
     });
 
-    function updateTheme(theme) {
+    function applyTheme(theme) {
+        // Find all elements with classes
         const elements = document.querySelectorAll('[class]');
-        elements.forEach(element => {
-            const classes = [...element.classList];
-            classes.forEach(className => {
-                if (className.includes(theme === "Light" ? "Dark" : "Light")) {
-                    const newClassName = className.replace(
-                        theme === "Light" ? "Dark" : "Light", 
-                        theme === "Light" ? "Light" : "Dark"
-                    );
-                    element.classList.remove(className);
-                    element.classList.add(newClassName);
+        
+        elements.forEach(function(element) {
+            // Check each class on the element
+            element.classList.forEach(function(className) {
+                if (theme === "Light") {
+                    if (className.includes("Dark")) {
+                        const newClassName = className.replace("Dark", "Light");
+                        element.classList.replace(className, newClassName);
+                    }
+                } else {
+                    if (className.includes("Light")) {
+                        const newClassName = className.replace("Light", "Dark");
+                        element.classList.replace(className, newClassName);
+                    }
                 }
             });
         });
-        theme_toggle.innerHTML = theme === "Light" 
-            ? '<i class="fa-solid fa-toggle-off"></i>' 
-            : '<i class="fa-solid fa-toggle-on"></i>';
+        
+        // Update button icon
+        if (theme === "Light") {
+            themeButton.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
+        } else {
+            themeButton.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
+        }
     }
 });
